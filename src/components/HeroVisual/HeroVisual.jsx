@@ -1,25 +1,27 @@
 import './HeroVisual.css'
 
 // Lattice grid dimensions — tuned to echo the reference grill's proportions.
-const COLS = 6
-const ROWS = 6
+const COLS = 5
+const ROWS = 5
 
 // Frame + lattice geometry (matches the group's local coordinate space below).
 const FRAME_X = 0
 const FRAME_Y = 0
 const FRAME_W = 320
 const FRAME_H = 300
-const INSET = 18
+const INSET = 16
 const INNER_X = FRAME_X + INSET
 const INNER_Y = FRAME_Y + INSET
 const INNER_W = FRAME_W - INSET * 2
 const INNER_H = FRAME_H - INSET * 2
 const CELL_W = INNER_W / COLS
 const CELL_H = INNER_H / ROWS
-// A large corner radius relative to cell size is what produces the
-// interlocking arched-square (quatrefoil) negative space between cells —
-// tiling rounded-rect cells edge-to-edge, with no gap, is the trick.
-const CELL_RX = Math.min(CELL_W, CELL_H) * 0.42
+// The corner radius must stay a MODEST fraction of the cell size — around
+// a fifth of it — so each cell reads as a square with gently arched
+// corners. Too large a ratio (as in an earlier version of this file) makes
+// every cell round into a near-circle, producing a "bubble grid" instead
+// of the interlocking arched-square lattice seen in the reference design.
+const CELL_RX = Math.min(CELL_W, CELL_H) * 0.3
 
 const LATTICE_CELLS = Array.from({ length: ROWS * COLS }, (_, index) => {
   const col = index % COLS
@@ -90,8 +92,8 @@ function HeroVisual() {
             rx={CELL_RX}
             fill="none"
             stroke="#eceef1"
-            strokeOpacity="0.5"
-            strokeWidth="3"
+            strokeOpacity="0.85"
+            strokeWidth="4"
           />
         ))}
 

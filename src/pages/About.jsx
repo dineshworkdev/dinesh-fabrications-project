@@ -67,13 +67,12 @@ function About() {
               that's built to fit and built to last.
             </p>
             <p className="about-placeholder-note">
-              [Placeholder — add real business history, founding story, or
-              background details here when available.]
+              Dinesh Fabrications is a local fabrication and welding workshop based in Coimbatore, specializing in custom steel fabrication, gates, grills, railings, sheds, and other metalwork. We focus on understanding each customer's requirements and delivering practical, well-finished fabrication work built to suit their needs.
             </p>
           </Reveal>
           <Reveal className="about-intro-media">
             <ImageWithFallback
-              src="/images/about/workshop-1.jpg"
+              src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmO4-biiF6auNp2JuXOTNgX6by6n6bgC6SXIWnyiU8dQR-Z4T8HsYD8zuYjgoyNcTm1KfbTh7pXJpcPPAiEzmkKmnhCeJI8o3fFackFcqiQZg3B0yp1YTG7ZAmZV7UjWewMCgAjXw=s1360-w1360-h1020-rw"
               alt="Dinesh Fabrications workshop interior"
               label="Workshop Photo"
               className="about-intro-image"
