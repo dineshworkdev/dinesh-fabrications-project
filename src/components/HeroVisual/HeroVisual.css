@@ -1,0 +1,28 @@
+.hero-visual {
+  width: 100%;
+  height: auto;
+  max-width: 480px;
+  display: block;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.35));
+}
+
+.hero-visual-pulse {
+  animation: hero-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes hero-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    r: 5;
+  }
+  50% {
+    opacity: 1;
+    r: 7;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-visual-pulse {
+    animation: none;
+  }
+}

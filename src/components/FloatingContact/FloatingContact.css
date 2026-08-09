@@ -1,0 +1,72 @@
+.floating-contact {
+  position: fixed;
+  right: var(--space-3);
+  bottom: var(--space-3);
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.floating-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
+  animation: scaleIn 0.4s var(--ease-premium) both;
+}
+
+.floating-btn-call {
+  animation-delay: 0.1s;
+}
+
+.floating-btn:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 16px 32px rgba(15, 17, 20, 0.24);
+}
+
+.floating-btn:active {
+  transform: scale(0.96);
+}
+
+.floating-btn-icon {
+  width: 24px;
+  height: 24px;
+  color: #fff;
+}
+
+.floating-btn-whatsapp {
+  background: var(--color-whatsapp);
+}
+.floating-btn-whatsapp:hover {
+  background: var(--color-whatsapp-dark);
+}
+
+.floating-btn-pulse-once {
+  animation: scaleIn 0.4s var(--ease-premium) both, pulseRing 1.6s var(--ease-out) 0.4s;
+}
+
+.floating-btn-call {
+  background: var(--color-primary);
+}
+.floating-btn-call:hover {
+  background: var(--color-primary-dark);
+}
+
+@media (min-width: 768px) {
+  .floating-contact {
+    right: var(--space-5);
+    bottom: var(--space-5);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-btn,
+  .floating-btn-pulse-once {
+    animation: none;
+  }
+}

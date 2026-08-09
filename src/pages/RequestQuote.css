@@ -1,0 +1,61 @@
+.quote-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.quote-form-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-5);
+}
+
+.quote-side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.quote-side-card {
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+
+.quote-side-card h3 {
+  margin-bottom: var(--space-2);
+}
+
+.quote-side-card p {
+  color: var(--color-text-muted);
+  font-size: 14px;
+  margin-bottom: var(--space-3);
+}
+
+.quote-side-card .btn {
+  margin-bottom: var(--space-2);
+}
+
+.quote-side-whatsapp {
+  margin-bottom: 0 !important;
+}
+
+.quote-side-steps {
+  list-style: decimal;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 900px) {
+  .quote-layout {
+    grid-template-columns: 1.4fr 1fr;
+  }
+}
