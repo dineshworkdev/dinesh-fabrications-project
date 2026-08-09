@@ -4,6 +4,12 @@
   max-width: 480px;
   display: block;
   filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.35));
+  animation: scaleIn 0.8s var(--ease-premium) 0.2s both;
+  transition: transform 0.4s var(--ease-out);
+}
+
+.hero-visual:hover {
+  transform: translateY(-4px);
 }
 
 .hero-visual-pulse {
@@ -22,6 +28,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .hero-visual {
+    animation: none;
+  }
   .hero-visual-pulse {
     animation: none;
   }

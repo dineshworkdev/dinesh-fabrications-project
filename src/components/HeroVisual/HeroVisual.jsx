@@ -1,12 +1,44 @@
 import './HeroVisual.css'
 
+// Lattice grid dimensions — tuned to echo the reference grill's proportions.
+const COLS = 6
+const ROWS = 6
+
+// Frame + lattice geometry (matches the group's local coordinate space below).
+const FRAME_X = 0
+const FRAME_Y = 0
+const FRAME_W = 320
+const FRAME_H = 300
+const INSET = 18
+const INNER_X = FRAME_X + INSET
+const INNER_Y = FRAME_Y + INSET
+const INNER_W = FRAME_W - INSET * 2
+const INNER_H = FRAME_H - INSET * 2
+const CELL_W = INNER_W / COLS
+const CELL_H = INNER_H / ROWS
+// A large corner radius relative to cell size is what produces the
+// interlocking arched-square (quatrefoil) negative space between cells —
+// tiling rounded-rect cells edge-to-edge, with no gap, is the trick.
+const CELL_RX = Math.min(CELL_W, CELL_H) * 0.42
+
+const LATTICE_CELLS = Array.from({ length: ROWS * COLS }, (_, index) => {
+  const col = index % COLS
+  const row = Math.floor(index / COLS)
+  return {
+    key: `${row}-${col}`,
+    x: INNER_X + col * CELL_W,
+    y: INNER_Y + row * CELL_H,
+  }
+})
+
 /**
  * HeroVisual
  * ----------
- * An original, hand-built SVG illustration (not a stock photo) combining
- * a blueprint-style grid with a large stylised steel gate motif. Used in
- * the Home hero so the page has a strong visual anchor immediately,
- * without depending on external/placeholder photography.
+ * An original, hand-built SVG illustration — not a photo — recreating the
+ * arched-square lattice pattern from the reference grill design as a
+ * stylised technical/blueprint-style drawing, in the same visual language
+ * (steel plate, blueprint grid, corner brackets, weld-point accents) as
+ * the rest of the site's industrial identity.
  */
 function HeroVisual() {
   return (
@@ -16,7 +48,7 @@ function HeroVisual() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       role="img"
-      aria-label="Illustration of a fabricated steel gate on a blueprint grid"
+      aria-label="Illustration of a custom fabricated steel window grill with an arched-square lattice pattern"
     >
       <defs>
         <linearGradient id="plate" x1="0" y1="0" x2="1" y2="1">
@@ -43,22 +75,43 @@ function HeroVisual() {
       <path d="M36 410V436H62" stroke="#f5a83f" strokeOpacity="0.55" strokeWidth="2.5" strokeLinecap="round" />
       <path d="M524 410V436H498" stroke="#f5a83f" strokeOpacity="0.55" strokeWidth="2.5" strokeLinecap="round" />
 
-      {/* Large gate motif */}
+      {/* Grill illustration — outer frame + arched-square lattice, redrawn
+          from the reference photo's design rather than reproducing it */}
       <g transform="translate(120,90)">
-        {/* posts */}
-        <rect x="0" y="0" width="14" height="300" rx="3" fill="url(#amberGlow)" />
-        <rect x="306" y="0" width="14" height="300" rx="3" fill="url(#amberGlow)" />
-        {/* top + bottom rails */}
-        <rect x="0" y="0" width="320" height="12" rx="3" fill="#eceef1" fillOpacity="0.92" />
-        <rect x="0" y="288" width="320" height="12" rx="3" fill="#eceef1" fillOpacity="0.92" />
-        {/* vertical bars */}
-        <rect x="60" y="12" width="8" height="276" fill="#eceef1" fillOpacity="0.65" />
-        <rect x="120" y="12" width="8" height="276" fill="#eceef1" fillOpacity="0.65" />
-        <rect x="186" y="12" width="8" height="276" fill="#eceef1" fillOpacity="0.65" />
-        <rect x="246" y="12" width="8" height="276" fill="#eceef1" fillOpacity="0.65" />
-        {/* diagonal cross brace */}
-        <line x1="14" y1="288" x2="306" y2="12" stroke="#f5a83f" strokeWidth="9" strokeLinecap="round" />
-        <line x1="14" y1="12" x2="306" y2="288" stroke="#eceef1" strokeOpacity="0.35" strokeWidth="7" strokeLinecap="round" />
+        {/* Lattice: tiled rounded-square cells whose overlapping corners
+            form the interlocking arched negative-space pattern */}
+        {LATTICE_CELLS.map((cell) => (
+          <rect
+            key={cell.key}
+            x={cell.x}
+            y={cell.y}
+            width={CELL_W}
+            height={CELL_H}
+            rx={CELL_RX}
+            fill="none"
+            stroke="#eceef1"
+            strokeOpacity="0.5"
+            strokeWidth="3"
+          />
+        ))}
+
+        {/* Outer window/grill frame */}
+        <rect
+          x={FRAME_X}
+          y={FRAME_Y}
+          width={FRAME_W}
+          height={FRAME_H}
+          rx="6"
+          fill="none"
+          stroke="url(#amberGlow)"
+          strokeWidth="11"
+        />
+
+        {/* Corner mounting points, echoing the frame's fixed corners */}
+        <circle cx={FRAME_X + 10} cy={FRAME_Y + 10} r="3.4" fill="#f5a83f" />
+        <circle cx={FRAME_X + FRAME_W - 10} cy={FRAME_Y + 10} r="3.4" fill="#f5a83f" />
+        <circle cx={FRAME_X + 10} cy={FRAME_Y + FRAME_H - 10} r="3.4" fill="#f5a83f" />
+        <circle cx={FRAME_X + FRAME_W - 10} cy={FRAME_Y + FRAME_H - 10} r="3.4" fill="#f5a83f" />
       </g>
 
       {/* Weld-point accent dots */}

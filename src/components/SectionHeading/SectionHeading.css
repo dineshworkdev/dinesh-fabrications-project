@@ -3,6 +3,15 @@
   margin-bottom: var(--space-6);
 }
 
+.section-heading-accent {
+  display: block;
+  width: 48px;
+  height: 3px;
+  border-radius: 2px;
+  margin-bottom: var(--space-3);
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+}
+
 .section-heading h2 {
   margin-bottom: var(--space-2);
 }
@@ -20,4 +29,8 @@
 .section-heading-center {
   margin-inline: auto;
   text-align: center;
+}
+
+.section-heading-center .section-heading-accent {
+  margin-inline: auto;
 }

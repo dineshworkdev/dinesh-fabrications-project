@@ -1,4 +1,5 @@
 import { NavLink, Link } from 'react-router-dom'
+import Reveal from '../Reveal/Reveal'
 import { IconPhone, IconChat, IconMail, IconMapPin } from '../icons/Icons'
 import {
   BUSINESS,
@@ -15,7 +16,7 @@ function Footer() {
 
   return (
     <footer className="footer">
-      <div className="container footer-grid">
+      <Reveal className="container footer-grid">
         <div className="footer-brand">
           <Link to="/" className="footer-logo">
             <span className="footer-logo-mark">DF</span>
@@ -78,7 +79,7 @@ function Footer() {
             </li>
           </ul>
         </div>
-      </div>
+      </Reveal>
 
       <div className="footer-bottom">
         <div className="container footer-bottom-inner">

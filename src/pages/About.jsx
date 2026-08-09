@@ -135,13 +135,14 @@ function About() {
           </Reveal>
           <div className="workshop-strip">
             {['workshop-2', 'workshop-3', 'workshop-4'].map((name) => (
-              <ImageWithFallback
-                key={name}
-                src={`/images/about/${name}.jpg`}
-                alt="Dinesh Fabrications workshop"
-                label="Workshop Photo"
-                className="workshop-strip-image"
-              />
+              <div key={name} className="workshop-strip-image-wrap">
+                <ImageWithFallback
+                  src={`/images/about/${name}.jpg`}
+                  alt="Dinesh Fabrications workshop"
+                  label="Workshop Photo"
+                  className="workshop-strip-image"
+                />
+              </div>
             ))}
           </div>
         </div>

@@ -87,7 +87,7 @@ function Home() {
             </a>
           </div>
 
-          <div className="hero-visual-wrap hero-visual-anim" aria-hidden="true">
+          <div className="hero-visual-wrap" aria-hidden="true">
             <HeroVisual />
           </div>
         </div>
@@ -96,22 +96,30 @@ function Home() {
       {/* ---------- TRUST / VALUE STRIP ---------- */}
       <section className="trust-strip">
         <div className="container trust-strip-inner">
-          <div className="trust-strip-item">
-            <IconShieldCheck className="trust-strip-icon" />
-            <span>Precision Fabrication</span>
-          </div>
-          <div className="trust-strip-item">
-            <IconSteel className="trust-strip-icon" />
-            <span>Quality Materials</span>
-          </div>
-          <div className="trust-strip-item">
-            <IconChat className="trust-strip-icon" />
-            <span>Clear Communication</span>
-          </div>
-          <div className="trust-strip-item">
-            <IconCustom className="trust-strip-icon" />
-            <span>Custom-Built Work</span>
-          </div>
+          <Reveal delay={0}>
+            <div className="trust-strip-item">
+              <IconShieldCheck className="trust-strip-icon" />
+              <span>Precision Fabrication</span>
+            </div>
+          </Reveal>
+          <Reveal delay={70}>
+            <div className="trust-strip-item">
+              <IconSteel className="trust-strip-icon" />
+              <span>Quality Materials</span>
+            </div>
+          </Reveal>
+          <Reveal delay={140}>
+            <div className="trust-strip-item">
+              <IconChat className="trust-strip-icon" />
+              <span>Clear Communication</span>
+            </div>
+          </Reveal>
+          <Reveal delay={210}>
+            <div className="trust-strip-item">
+              <IconCustom className="trust-strip-icon" />
+              <span>Custom-Built Work</span>
+            </div>
+          </Reveal>
         </div>
       </section>
 

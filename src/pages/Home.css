@@ -1,9 +1,15 @@
 /* ---------- Hero ---------- */
 .hero {
-  background: linear-gradient(160deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  position: relative;
+  background-color: var(--color-primary);
+  background-image:
+    repeating-linear-gradient(0deg, rgba(245, 168, 63, 0.05) 0, rgba(245, 168, 63, 0.05) 1px, transparent 1px, transparent 34px),
+    repeating-linear-gradient(90deg, rgba(245, 168, 63, 0.05) 0, rgba(245, 168, 63, 0.05) 1px, transparent 1px, transparent 34px),
+    linear-gradient(160deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   color: var(--color-on-dark);
-  padding-block: var(--space-8) var(--space-7);
+  padding-block: var(--space-8) calc(var(--space-8) + 22px);
   overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
 }
 
 .hero-inner {
@@ -36,10 +42,6 @@
 
 .hero-whatsapp-anim {
   animation: fadeIn 0.7s var(--ease-out) 0.44s both;
-}
-
-.hero-visual-anim {
-  animation: scaleIn 0.8s var(--ease-premium) 0.2s both;
 }
 
 .hero-subtext {
@@ -100,6 +102,18 @@
   font-size: 13.5px;
   font-weight: 600;
   color: var(--color-text);
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  transition: transform 0.25s var(--ease-out), color 0.25s ease;
+}
+
+.trust-strip-item:hover {
+  transform: translateY(-2px);
+}
+
+.trust-strip-item:hover .trust-strip-icon {
+  color: var(--color-accent);
+  transform: scale(1.1);
 }
 
 .trust-strip-icon {
@@ -107,6 +121,7 @@
   height: 22px;
   color: var(--color-accent-dark);
   flex-shrink: 0;
+  transition: transform 0.25s var(--ease-out), color 0.25s ease;
 }
 
 /* ---------- Grids shared by Services / Projects ---------- */
@@ -182,12 +197,22 @@
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-md);
+  transition: box-shadow 0.35s var(--ease-out);
+}
+
+.about-preview-media:hover {
+  box-shadow: var(--shadow-lg);
 }
 
 .about-preview-image {
   width: 100%;
   height: 320px;
   object-fit: cover;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.about-preview-media:hover .about-preview-image {
+  transform: scale(1.05);
 }
 
 .about-preview-content p {
