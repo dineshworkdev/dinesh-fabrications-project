@@ -3,9 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://dineshworkdev.github.io/dinesh-fabrications-project/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "node scripts/copy-404.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },
