@@ -11,6 +11,11 @@
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   padding: var(--space-5);
+  transition: box-shadow 0.3s var(--ease-out);
+}
+
+.quote-form-card:focus-within {
+  box-shadow: var(--shadow-lg);
 }
 
 .quote-side {
@@ -24,6 +29,13 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: var(--space-5);
+  transition: box-shadow 0.3s var(--ease-out), transform 0.3s var(--ease-out), border-color 0.3s ease;
+}
+
+.quote-side-card:hover {
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-3px);
+  border-color: var(--color-accent);
 }
 
 .quote-side-card h3 {

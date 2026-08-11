@@ -27,6 +27,7 @@ function Projects() {
       <section className="page-header">
         <div className="container">
           <span className="eyebrow">Our Work</span>
+          <span className="page-header-accent" aria-hidden="true" />
           <h1>Projects &amp; Gallery</h1>
           <p className="page-header-subtext">
             A showcase of fabrication work completed at the workshop. Filter

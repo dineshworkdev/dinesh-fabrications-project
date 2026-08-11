@@ -17,6 +17,7 @@ function Services() {
       <section className="page-header">
         <div className="container">
           <span className="eyebrow">What We Do</span>
+          <span className="page-header-accent" aria-hidden="true" />
           <h1>Fabrication Services</h1>
           <p className="page-header-subtext">
             From custom gates to structural steelwork — a look at the

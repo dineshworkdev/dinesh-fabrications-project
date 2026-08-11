@@ -41,6 +41,7 @@ function About() {
       <section className="page-header">
         <div className="container">
           <span className="eyebrow">About Dinesh Fabrications</span>
+          <span className="page-header-accent" aria-hidden="true" />
           <h1>A Workshop Built on Craftsmanship</h1>
           <p className="page-header-subtext">
             Getting to know the workshop behind the gates, railings, and
@@ -54,6 +55,7 @@ function About() {
         <div className="container about-intro">
           <Reveal className="about-intro-content">
             <span className="eyebrow">Our Story</span>
+            <span className="section-heading-accent" aria-hidden="true" />
             <h2>Fabrication Work, Done Right</h2>
             <p>
               Dinesh Fabrications is a fabrication and welding workshop taking
@@ -67,12 +69,13 @@ function About() {
               that's built to fit and built to last.
             </p>
             <p className="about-placeholder-note">
-              Dinesh Fabrications is a local fabrication and welding workshop based in Coimbatore, specializing in custom steel fabrication, gates, grills, railings, sheds, and other metalwork. We focus on understanding each customer's requirements and delivering practical, well-finished fabrication work built to suit their needs.
+              [Placeholder — add real business history, founding story, or
+              background details here when available.]
             </p>
           </Reveal>
           <Reveal className="about-intro-media">
             <ImageWithFallback
-              src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmO4-biiF6auNp2JuXOTNgX6by6n6bgC6SXIWnyiU8dQR-Z4T8HsYD8zuYjgoyNcTm1KfbTh7pXJpcPPAiEzmkKmnhCeJI8o3fFackFcqiQZg3B0yp1YTG7ZAmZV7UjWewMCgAjXw=s1360-w1360-h1020-rw"
+              src="/images/about/workshop-1.jpg"
               alt="Dinesh Fabrications workshop interior"
               label="Workshop Photo"
               className="about-intro-image"
@@ -86,6 +89,7 @@ function About() {
         <div className="container mission-block">
           <Reveal>
             <span className="eyebrow">Our Mission</span>
+            <span className="section-heading-accent" aria-hidden="true" />
             <h2>Precision Fabrication, Built Around Your Needs</h2>
             <p>
               To deliver reliable, well-fitted fabrication work — approaching

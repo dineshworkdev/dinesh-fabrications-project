@@ -73,6 +73,7 @@ function RequestQuote() {
       <section className="page-header">
         <div className="container">
           <span className="eyebrow">Get a Quotation</span>
+          <span className="page-header-accent" aria-hidden="true" />
           <h1>Request a Quote</h1>
           <p className="page-header-subtext">
             Tell us about your project and we'll get back to you with a

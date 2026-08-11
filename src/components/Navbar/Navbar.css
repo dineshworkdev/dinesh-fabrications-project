@@ -1,7 +1,4 @@
 .navbar {
-  position: sticky;
-  top: 0;
-  z-index: 50;
   animation: navbarEnter 0.5s var(--ease-out) both;
 }
 
@@ -23,19 +20,14 @@
 }
 
 /* --- Slim top contact bar (desktop only) --- */
+/* Sits in normal document flow (not sticky) — it scrolls away naturally
+   as the page scrolls, so no height/collapse animation is needed here.
+   Only .navbar-main below is sticky. */
 .navbar-topbar {
   background: var(--color-primary-dark);
   color: var(--color-on-dark-muted);
   font-size: 13px;
   display: none;
-  max-height: 36px;
-  overflow: hidden;
-  transition: max-height 0.3s var(--ease-out), opacity 0.3s var(--ease-out);
-}
-
-.navbar-scrolled .navbar-topbar {
-  max-height: 0;
-  opacity: 0;
 }
 
 .navbar-topbar-inner {
@@ -63,6 +55,15 @@
 }
 
 /* --- Main bar --- */
+/* .navbar-sticky (wrapping this + the mobile panel) is what stays pinned
+   while scrolling. Its height never changes on scroll — only box-shadow —
+   so pinning it never causes the page content below to jump or shake. */
+.navbar-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
 .navbar-main {
   background: var(--color-primary);
   box-shadow: var(--shadow-sm);
@@ -78,11 +79,6 @@
   align-items: center;
   justify-content: space-between;
   height: 72px;
-  transition: height 0.3s var(--ease-out);
-}
-
-.navbar-scrolled .navbar-inner {
-  height: 64px;
 }
 
 /* --- Logo --- */

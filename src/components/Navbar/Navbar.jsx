@@ -48,7 +48,7 @@ function Navbar() {
   // Add a subtle "scrolled" elevation once the page moves past the top.
   useEffect(() => {
     function handleScroll() {
-      setIsScrolled(window.scrollY > 8)
+      setIsScrolled(window.scrollY > 24)
     }
     handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
@@ -68,86 +68,91 @@ function Navbar() {
         </div>
       </div>
 
-      <div className="navbar-main">
-        <div className="navbar-inner container">
-          {/* Placeholder text wordmark — swap for a real logo image later. */}
-          <NavLink to="/" className="navbar-logo" onClick={() => setIsMenuOpen(false)}>
-            <span className="navbar-logo-mark">DF</span>
-            <span className="navbar-logo-text">
-              <span className="navbar-logo-strong">Dinesh</span> Fabrications
-            </span>
-          </NavLink>
-
-          {/* Desktop navigation */}
-          <nav className="navbar-links" aria-label="Main navigation">
-            {NAV_LINKS.map((link) => (
-              <NavLink
-                key={link.path}
-                to={link.path}
-                className={({ isActive }) =>
-                  'navbar-link' + (isActive ? ' navbar-link-active' : '')
-                }
-                end={link.path === '/'}
-              >
-                {link.label}
-              </NavLink>
-            ))}
-            <NavLink to="/request-quote" className="btn btn-primary navbar-cta">
-              Request a Quote
+      {/* Sticky group: main bar + mobile dropdown panel stay pinned together.
+          The topbar above is intentionally excluded so it scrolls away
+          normally instead of being animated/collapsed. */}
+      <div className="navbar-sticky">
+        <div className="navbar-main">
+          <div className="navbar-inner container">
+            {/* Placeholder text wordmark — swap for a real logo image later. */}
+            <NavLink to="/" className="navbar-logo" onClick={() => setIsMenuOpen(false)}>
+              <span className="navbar-logo-mark">DF</span>
+              <span className="navbar-logo-text">
+                <span className="navbar-logo-strong">Dinesh</span> Fabrications
+              </span>
             </NavLink>
-          </nav>
 
-          {/* Mobile menu toggle */}
-          <button
-            type="button"
-            className={'navbar-toggle' + (isMenuOpen ? ' navbar-toggle-open' : '')}
-            aria-expanded={isMenuOpen}
-            aria-controls="mobile-menu"
-            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-            onClick={() => setIsMenuOpen((open) => !open)}
-          >
-            <span className="navbar-toggle-bar" />
-            <span className="navbar-toggle-bar" />
-            <span className="navbar-toggle-bar" />
-          </button>
+            {/* Desktop navigation */}
+            <nav className="navbar-links" aria-label="Main navigation">
+              {NAV_LINKS.map((link) => (
+                <NavLink
+                  key={link.path}
+                  to={link.path}
+                  className={({ isActive }) =>
+                    'navbar-link' + (isActive ? ' navbar-link-active' : '')
+                  }
+                  end={link.path === '/'}
+                >
+                  {link.label}
+                </NavLink>
+              ))}
+              <NavLink to="/request-quote" className="btn btn-primary navbar-cta">
+                Request a Quote
+              </NavLink>
+            </nav>
+
+            {/* Mobile menu toggle */}
+            <button
+              type="button"
+              className={'navbar-toggle' + (isMenuOpen ? ' navbar-toggle-open' : '')}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
+              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+              onClick={() => setIsMenuOpen((open) => !open)}
+            >
+              <span className="navbar-toggle-bar" />
+              <span className="navbar-toggle-bar" />
+              <span className="navbar-toggle-bar" />
+            </button>
+          </div>
         </div>
-      </div>
 
-      {/* Mobile navigation panel */}
-      <nav
-        id="mobile-menu"
-        className={'navbar-mobile' + (isMenuOpen ? ' navbar-mobile-open' : '')}
-        aria-label="Mobile navigation"
-      >
-        {NAV_LINKS.map((link, i) => (
+        {/* Mobile navigation panel */}
+        <nav
+          id="mobile-menu"
+          className={'navbar-mobile' + (isMenuOpen ? ' navbar-mobile-open' : '')}
+          aria-label="Mobile navigation"
+        >
+          {NAV_LINKS.map((link, i) => (
+            <NavLink
+              key={link.path}
+              to={link.path}
+              className={({ isActive }) =>
+                'navbar-mobile-link' + (isActive ? ' navbar-link-active' : '')
+              }
+              style={{ transitionDelay: isMenuOpen ? `${i * 40}ms` : '0ms' }}
+              end={link.path === '/'}
+            >
+              {link.label}
+            </NavLink>
+          ))}
           <NavLink
-            key={link.path}
-            to={link.path}
-            className={({ isActive }) =>
-              'navbar-mobile-link' + (isActive ? ' navbar-link-active' : '')
-            }
-            style={{ transitionDelay: isMenuOpen ? `${i * 40}ms` : '0ms' }}
-            end={link.path === '/'}
+            to="/request-quote"
+            className="btn btn-primary navbar-mobile-cta"
+            style={{ transitionDelay: isMenuOpen ? `${NAV_LINKS.length * 40}ms` : '0ms' }}
           >
-            {link.label}
+            Request a Quote
           </NavLink>
-        ))}
-        <NavLink
-          to="/request-quote"
-          className="btn btn-primary navbar-mobile-cta"
-          style={{ transitionDelay: isMenuOpen ? `${NAV_LINKS.length * 40}ms` : '0ms' }}
-        >
-          Request a Quote
-        </NavLink>
-        <a
-          href={getPhoneLink()}
-          className="navbar-mobile-phone"
-          style={{ transitionDelay: isMenuOpen ? `${(NAV_LINKS.length + 1) * 40}ms` : '0ms' }}
-        >
-          <IconPhone className="navbar-topbar-icon" />
-          {BUSINESS.phone}
-        </a>
-      </nav>
+          <a
+            href={getPhoneLink()}
+            className="navbar-mobile-phone"
+            style={{ transitionDelay: isMenuOpen ? `${(NAV_LINKS.length + 1) * 40}ms` : '0ms' }}
+          >
+            <IconPhone className="navbar-topbar-icon" />
+            {BUSINESS.phone}
+          </a>
+        </nav>
+      </div>
     </header>
   )
 }

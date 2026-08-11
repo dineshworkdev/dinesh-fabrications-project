@@ -12,18 +12,61 @@
   transform: translateY(-4px);
 }
 
-.hero-visual-pulse {
-  animation: hero-pulse 2.4s ease-in-out infinite;
+/* Weld pool — bright core, slow breathing pulse */
+.hero-weld-core {
+  animation: weldCorePulse 1.6s ease-in-out infinite;
+  transform-origin: 213px 170px;
 }
 
-@keyframes hero-pulse {
+@keyframes weldCorePulse {
   0%, 100% {
-    opacity: 0.5;
-    r: 5;
+    opacity: 0.85;
+    transform: scale(1);
   }
   50% {
     opacity: 1;
-    r: 7;
+    transform: scale(1.18);
+  }
+}
+
+/* Soft ambient halo behind the weld point, slower breathing glow */
+.hero-weld-halo {
+  animation: weldHaloPulse 2.4s ease-in-out infinite;
+  transform-origin: 213px 170px;
+}
+
+@keyframes weldHaloPulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.12);
+  }
+}
+
+/* Sparks — quick flicker, staggered per-particle so they don't blink in unison */
+.hero-spark {
+  animation: sparkFlicker 1.1s ease-in-out infinite;
+  transform-origin: 213px 170px;
+}
+
+@keyframes sparkFlicker {
+  0%, 100% {
+    opacity: 0.15;
+  }
+  15% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.35;
+  }
+  60% {
+    opacity: 0.9;
+  }
+  85% {
+    opacity: 0.2;
   }
 }
 
@@ -31,7 +74,10 @@
   .hero-visual {
     animation: none;
   }
-  .hero-visual-pulse {
+  .hero-weld-core,
+  .hero-weld-halo,
+  .hero-spark {
     animation: none;
+    opacity: 0.85;
   }
 }

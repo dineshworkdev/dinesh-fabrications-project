@@ -79,6 +79,11 @@
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   padding: var(--space-5);
+  transition: box-shadow 0.3s var(--ease-out);
+}
+
+.contact-form-card:focus-within {
+  box-shadow: var(--shadow-lg);
 }
 
 .contact-form-card h2 {

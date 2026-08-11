@@ -74,6 +74,7 @@ function Contact() {
       <section className="page-header">
         <div className="container">
           <span className="eyebrow">Get In Touch</span>
+          <span className="page-header-accent" aria-hidden="true" />
           <h1>Contact Us</h1>
           <p className="page-header-subtext">
             Reach out by phone, WhatsApp, email, or the form below — we'll get
