@@ -67,7 +67,7 @@ function RequestQuote() {
     <>
       <Seo
         title="Request a Quote"
-        description="Request a fabrication quote from Dinesh Fabrications — tell us about your gate, grill, railing, or structural steel project."
+        description="Request a fabrication quote from Dinesh Fabrications — tell us about your gate, grill, railing, or MS fabrication project."
       />
 
       <section className="page-header">

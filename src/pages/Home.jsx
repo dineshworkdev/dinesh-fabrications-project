@@ -55,8 +55,8 @@ function Home() {
   return (
     <>
       <Seo
-        title="Custom Steel Fabrication & Welding"
-        description="Dinesh Fabrications provides custom gate, grill, railing, and structural steel fabrication for homes, businesses, and contractors."
+        title="Custom MS Fabrication & Welding"
+        description="Dinesh Fabrications is an MS fabrication and welding workshop in Coimbatore, offering doors, grills, staircases, railings, sheds, and custom fabrication work since 2015."
       />
 
       {/* ---------- HERO ---------- */}
@@ -64,11 +64,12 @@ function Home() {
         <div className="container hero-inner">
           <div className="hero-content">
             <span className="eyebrow hero-eyebrow-anim">Fabrication &amp; Welding Workshop</span>
-            <h1 className="hero-headline-anim">Custom Steel Fabrication, Built to Last</h1>
+            <h1 className="hero-headline-anim">Custom MS Fabrication, Built to Last</h1>
             <p className="hero-subtext hero-subtext-anim">
-              Dinesh Fabrications designs and fabricates gates, grills, railings,
-              sheds, and structural steelwork — precision-built for homes,
-              businesses, and contractors.
+              Dinesh Fabrications designs and fabricates doors, grills,
+              staircases, railings, sheds, and custom MS fabrication work —
+              for homeowners, builders, and businesses across{' '}
+              {BUSINESS.serviceArea}.
             </p>
             <div className="hero-actions hero-actions-anim">
               <Link to="/request-quote" className="btn btn-primary btn-lg">
@@ -218,10 +219,11 @@ function Home() {
             <span className="eyebrow">About Us</span>
             <h2>A Workshop Built Around Craftsmanship</h2>
             <p>
-              Dinesh Fabrications takes on fabrication and welding work for
-              homes, businesses, and contractors — from gates and grills to
-              structural steelwork. Every project is approached with the same
-              attention to fit, finish, and durability.
+              Since {BUSINESS.establishedYear}, Dinesh Fabrications has taken
+              on MS fabrication and welding work for homeowners, builders,
+              and businesses across {BUSINESS.serviceArea} — from doors and
+              grills to staircases, railings, and sheds. Every project gets
+              the same attention to fit, finish, and durability.
             </p>
             <Link to="/about" className="btn btn-secondary">
               Learn More About Us <IconArrowRight className="section-cta-icon" />

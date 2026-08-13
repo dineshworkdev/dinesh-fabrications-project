@@ -4,6 +4,7 @@ import Reveal from '../components/Reveal/Reveal'
 import SectionHeading from '../components/SectionHeading/SectionHeading'
 import ImageWithFallback from '../components/ImageWithFallback/ImageWithFallback'
 import { IconShieldCheck, IconCustom, IconClock, IconChat, IconArrowRight } from '../components/icons/Icons'
+import { BUSINESS } from '../data/business'
 import './About.css'
 
 const VALUES = [
@@ -34,7 +35,7 @@ function About() {
     <>
       <Seo
         title="About Us"
-        description="Learn about Dinesh Fabrications — a fabrication and welding workshop focused on custom, quality steelwork."
+        description="Dinesh Fabrications is an MS fabrication and welding workshop in Coimbatore, established in 2015 by Murali Krishnan B."
       />
 
       {/* ---------- Page header ---------- */}
@@ -58,19 +59,26 @@ function About() {
             <span className="section-heading-accent" aria-hidden="true" />
             <h2>Fabrication Work, Done Right</h2>
             <p>
-              Dinesh Fabrications is a fabrication and welding workshop taking
-              on custom steelwork — gates, window and door grills, staircase
-              and balcony railings, sheds, and structural fabrication — for
-              homeowners, businesses, and contractors.
+              Dinesh Fabrications is an MS (mild steel) fabrication and
+              welding workshop based in Coimbatore, started by{' '}
+              {BUSINESS.founder} in {BUSINESS.establishedYear}. Over the
+              years the workshop has taken on safety doors, customized doors,
+              window and door grills, staircases and staircase handles,
+              railings, sheds, and structural fabrication work — along with
+              repairs and modifications on existing structures.
             </p>
             <p>
-              Every enquiry is treated as its own project: understanding what's
-              needed, discussing materials and design, and fabricating work
-              that's built to fit and built to last.
+              We work with homeowners, builders and contractors, shops and
+              businesses, and apartments across {BUSINESS.serviceArea}.
+              Alongside the regular services, we also build custom pieces to
+              order — tables, park chairs, dog rooms, outdoor cylinder
+              holders, and other one-off fabrication requests.
             </p>
-            <p className="about-placeholder-note">
-              [Placeholder — add real business history, founding story, or
-              background details here when available.]
+            <p>
+              The workshop is run by a small, hands-on team — {BUSINESS.founder}
+              , one regular workshop team member, and myself. For larger shed
+              works or site-based projects, we bring in a few additional
+              workers temporarily as the workload needs.
             </p>
           </Reveal>
           <Reveal className="about-intro-media">
@@ -92,9 +100,10 @@ function About() {
             <span className="section-heading-accent" aria-hidden="true" />
             <h2>Precision Fabrication, Built Around Your Needs</h2>
             <p>
-              To deliver reliable, well-fitted fabrication work — approaching
-              each project with the technical care it deserves, and keeping
-              communication with customers clear from enquiry to installation.
+              To deliver reliable, well-fitted MS fabrication work across{' '}
+              {BUSINESS.serviceArea} — approaching each project with the
+              technical care it deserves, and keeping communication with
+              customers clear from enquiry to installation.
             </p>
           </Reveal>
         </div>

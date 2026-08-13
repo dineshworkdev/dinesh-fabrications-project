@@ -21,7 +21,7 @@ function Projects() {
     <>
       <Seo
         title="Projects & Gallery"
-        description="Browse a gallery of fabrication projects by Dinesh Fabrications, including gates, railings, structural work, and sheds."
+        description="Browse a gallery of fabrication projects by Dinesh Fabrications in Coimbatore, including gates, railings, structural work, and sheds."
       />
 
       <section className="page-header">

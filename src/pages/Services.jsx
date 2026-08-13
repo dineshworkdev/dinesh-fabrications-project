@@ -4,6 +4,7 @@ import Reveal from '../components/Reveal/Reveal'
 import ServiceCard from '../components/ServiceCard/ServiceCard'
 import { IconArrowRight } from '../components/icons/Icons'
 import { SERVICES } from '../data/services'
+import { BUSINESS } from '../data/business'
 import './Services.css'
 
 function Services() {
@@ -11,7 +12,7 @@ function Services() {
     <>
       <Seo
         title="Services"
-        description="Explore fabrication services from Dinesh Fabrications — gates, grills, railings, sheds, structural steelwork, welding, and repairs."
+        description="MS fabrication services from Dinesh Fabrications in Coimbatore — doors, grills, railings, sheds, structural fabrication, welding, and repairs."
       />
 
       <section className="page-header">
@@ -20,8 +21,8 @@ function Services() {
           <span className="page-header-accent" aria-hidden="true" />
           <h1>Fabrication Services</h1>
           <p className="page-header-subtext">
-            From custom gates to structural steelwork — a look at the
-            fabrication and welding services we take on.
+            From doors and gates to sheds and staircases — MS fabrication and
+            welding services across {BUSINESS.serviceArea}.
           </p>
         </div>
       </section>

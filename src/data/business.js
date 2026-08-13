@@ -7,7 +7,10 @@
 
 export const BUSINESS = {
   name: 'Dinesh Fabrications',
-  tagline: 'Custom Steel & Fabrication Work',
+  tagline: 'MS Fabrication & Welding Works',
+  establishedYear: 2015,
+  founder: 'Murali Krishnan B',
+  serviceArea: 'Coimbatore and nearby areas',
 
   phone: '+91 90926 79038',
   whatsapp: '+91 86109 51813',
@@ -21,11 +24,7 @@ export const BUSINESS = {
     pincode: '641016',
   },
 
-  // PLACEHOLDER — replace with real operating hours
-  hours: [
-    { days: 'Monday – Saturday', time: '9:00 AM – 7:00 PM' },
-    { days: 'Sunday', time: 'Closed' },
-  ],
+  hours: [{ days: 'Every day', time: '9:00 AM – 8:30 PM' }],
 
   // Google Maps embed for Dinesh Fabrications CBE — verified Google Business
   // listing (not just an address lookup), grabbed via Google Maps → Share →

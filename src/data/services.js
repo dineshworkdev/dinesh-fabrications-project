@@ -49,9 +49,9 @@ export const SERVICES = [
   {
     id: 'steel-fabrication',
     icon: 'steel',
-    title: 'MS / Steel Fabrication',
+    title: 'MS Fabrication',
     shortDescription:
-      'General mild-steel fabrication work, cut and shaped to your exact specifications.',
+      'Custom mild-steel (MS) fabrication work, built to your exact requirements.',
     image: '/images/services/steel-fabrication.jpg',
     featured: false,
   },
@@ -78,7 +78,7 @@ export const SERVICES = [
     icon: 'custom',
     title: 'Custom Fabrication',
     shortDescription:
-      'Have a specific design in mind? We fabricate custom metalwork to your drawings or ideas.',
+      'From tables and park chairs to dog rooms and outdoor cylinder holders — if you can describe it, we can likely fabricate it.',
     image: '/images/services/custom-fabrication.jpg',
     featured: false,
   },
